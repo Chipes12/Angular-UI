@@ -1,0 +1,31 @@
+<div>
+    <form [formGroup]="form">
+        <div>
+            <!-- <label for="fullname">Full name: </label> -->
+            <input type="text" name="fullname" placeholder="Full name" formControlName="name">
+        </div>
+        <div>
+             <!-- <label for="username">Username: </label> -->
+            <input type="text" name="username" placeholder="Username" formControlName="username">
+        </div>
+        <div>
+             <!-- <label for="email">Email: </label> -->
+            <input type="text" name="email" placeholder="E-mail">
+        </div>
+        <div>
+            <!-- <label for="password">Password: </label> -->
+            <input type="password" name="password" placeholder="Password">
+        </div>
+        <div>
+             <!-- <label for="passwordc"> Confirm your password: </label> -->
+            <input type="password" name="passwordc" placeholder="Password">
+        </div>
+        <div>
+            <button>Sign Up</button>
+        </div>
+        <div>
+            don't have a account ? <a routerLink="/signup">Sign up here!</a>
+        </div>
+    </form>    
+</div>
+have a account ? <a routerLink="/login">Log in here!</a>
