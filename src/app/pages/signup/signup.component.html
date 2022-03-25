@@ -1,5 +1,6 @@
 <div>
-    <form [formGroup]="form">
+    {{form.valid}}
+    <form [formGroup]="form" (submit)="sendData()">
         <div>
             <!-- <label for="fullname">Full name: </label> -->
             <input type="text" name="fullname" placeholder="Full name" formControlName="name">
@@ -10,22 +11,22 @@
         </div>
         <div>
              <!-- <label for="email">Email: </label> -->
-            <input type="text" name="email" placeholder="E-mail">
+            <input type="text" name="email" placeholder="E-mail" formControlName="email">
         </div>
         <div>
             <!-- <label for="password">Password: </label> -->
-            <input type="password" name="password" placeholder="Password">
+            <input type="password" name="password" placeholder="Password" formControlName="password">
         </div>
         <div>
              <!-- <label for="passwordc"> Confirm your password: </label> -->
-            <input type="password" name="passwordc" placeholder="Password">
+            <input type="password" name="passwordc" placeholder="Password" formControlName="confirm">
         </div>
         <div>
-            <button>Sign Up</button>
+            <button [disabled]="!form.valid">Sign Up</button>
         </div>
+        <span *ngIf="form.errors && form.errors['passwordMismatch']">Passwords dont match</span>
         <div>
-            don't have a account ? <a routerLink="/signup">Sign up here!</a>
+            already have a account ? <a routerLink="/signup">Sign up here!</a>
         </div>
     </form>    
 </div>
-have a account ? <a routerLink="/login">Log in here!</a>
