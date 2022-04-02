@@ -1,21 +1,8 @@
-<app-header></app-header>
-<!-- Aquí puedes escribir tu comentario 
-<h1>Hola Mundo</h1> 
-<h2 *ngIf = "flag">Bienvenido <span>{{name}}</span></h2>
-
-<ul>
-    <li *ngFor="let movie of movies">{{movie}}</li>
-</ul>
-
-<form (submit)="doOnClick($event)">
-    <input name="movie" type="text" placeholder="title..." [(ngModel)]="searchValue">
-    <button [disabled]="!searchValue">Agregar</button>
-</form>
-
-<input type="text" [(ngModel)]="searchValue" (keyup)="doSearch()">
-<ul>
-    <li *ngFor="let movie of filteredMovies">{{movie}}</li>
-</ul>
--->
-<router-outlet></router-outlet>
-<app-footer></app-footer>
+<html>
+    <head></head>
+    <body>
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </body>
+</html>

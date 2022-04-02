@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -27,7 +28,7 @@ export class AppComponent {
     }, 2000);
   }
 
-  ngOnInit(): void{ }
+  ngOnInit(): void{}
 
   doOnClick(e: any){
     console.log('Clikeado');
