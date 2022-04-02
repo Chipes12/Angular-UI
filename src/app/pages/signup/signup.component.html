@@ -1,5 +1,4 @@
 <div>
-    {{form.valid}}
     <form [formGroup]="form" (submit)="sendData()">
         <div>
             <!-- <label for="fullname">Full name: </label> -->
@@ -15,18 +14,24 @@
         </div>
         <div>
             <!-- <label for="password">Password: </label> -->
-            <input type="password" name="password" placeholder="Password" formControlName="password">
+            <input [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" formControlName="password">
+            <button type="button" (click)="togglePassword()">{{showPassword ? 'Hide' : 'Show'}}</button>
         </div>
         <div>
              <!-- <label for="passwordc"> Confirm your password: </label> -->
-            <input type="password" name="passwordc" placeholder="Password" formControlName="confirm">
+            <input type="password" name="passwordc" placeholder="Confirm your password" formControlName="confirm">
         </div>
         <div>
-            <button [disabled]="!form.valid">Sign Up</button>
+            <label for="accept"> Aceptar terminos y condiciones </label>
+            <input type="checkbox" name="accept" formControlName="acceptTerms"> 
+        </div>
+        <div>
+            <button type="submit" [disabled]="!form.valid">Sign Up</button>
         </div>
         <span *ngIf="form.errors && form.errors['passwordMismatch']">Passwords dont match</span>
+        <span [hidden]="!created">Correo ya en uso</span>
         <div>
-            already have a account ? <a routerLink="/signup">Sign up here!</a>
+            already have a account ? <a routerLink="/login">Log in here!</a>
         </div>
     </form>    
 </div>

@@ -1,1 +1,17 @@
-<p>users works!</p>
+<h1>Has iniciado sesión correctamente</h1>
+
+<p *ngIf="users.length == 0">Cargando...</p>
+<table *ngIf="users.length">
+    <tr>
+        <th>Name</th>
+        <th>Correo</th>
+        <th>Posts</th>
+    </tr>
+    <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>
+            <a routerLink="/posts" [queryParams]="{user: user.id}">Ver Posts</a>
+        </td>
+    </tr>
+</table>

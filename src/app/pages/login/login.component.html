@@ -1,16 +1,19 @@
 <div>
-    <form>
-        <div>
-            <label for="username">Username: </label>
-            <input type="text" name="username" placeholder="Username">
+    <form (submit)="logIn()">
+        <div class="line">
+            <label for="email">Correo: </label>
+            <input type="text" [(ngModel)]="credentials.email" name="email" placeholder="correo"> 
         </div>
-        <div>
+        <div class="line">
             <label for="password">Password: </label>
-            <input type="text" name="password" placeholder="Password">
+            <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password"> 
         </div>
-        <div>
+        <div class="line">
             <button>Log in</button>
         </div>
+        <span [hidden]="!error">Credenciales incorrectas</span>
+        <div class="line">
+            Dont have an account? <a routerLink="/signup">Sign up here</a>
+        </div>
     </form>
-    have a account ? <a routerLink="/signup">Log in here!</a>
 </div>
