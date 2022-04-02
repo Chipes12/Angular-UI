@@ -1,19 +1,19 @@
-<div>
-    <form (submit)="logIn()">
+<div class="container">
+    <form [formGroup]="form" (submit)="logIn()">
         <div class="line">
-            <label for="email">Correo: </label>
-            <input type="text" [(ngModel)]="credentials.email" name="email" placeholder="correo"> 
+            <label for="email" class="font">Correo: </label>
+            <input type="text" [(ngModel)]="credentials.email" name="email" placeholder="Correo" class="font center" formControlName="correo">
         </div>
         <div class="line">
-            <label for="password">Password: </label>
-            <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password"> 
+            <label for="password" class="font">Password: </label>
+            <input type="password" [(ngModel)]="credentials.password" name="password" placeholder="Password" class="font" formControlName="password"> 
         </div>
         <div class="line">
-            <button>Log in</button>
+            <button class="font"  [disabled]="!form.valid">Log in</button>
         </div>
-        <span [hidden]="!error">Credenciales incorrectas</span>
+        <span class="error" [hidden]="!error">Credenciales incorrectas</span>
         <div class="line">
-            Dont have an account? <a routerLink="/signup">Sign up here</a>
+            <p class="font">Dont have an account? <a routerLink="/signup" class="font" >Sign up here</a></p>
         </div>
     </form>
 </div>

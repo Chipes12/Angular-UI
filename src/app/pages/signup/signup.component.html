@@ -1,37 +1,37 @@
-<div>
+<div class="container">
     <form [formGroup]="form" (submit)="sendData()">
-        <div>
-            <!-- <label for="fullname">Full name: </label> -->
-            <input type="text" name="fullname" placeholder="Full name" formControlName="name">
+        <div class="line">
+            <label for="fullname" class="font">Full name: </label>
+            <input type="text" name="fullname" placeholder="Full name" formControlName="name" class="font">
         </div>
-        <div>
-             <!-- <label for="username">Username: </label> -->
-            <input type="text" name="username" placeholder="Username" formControlName="username">
+        <div class="line">
+             <label for="username" class="font">Username: </label>
+            <input type="text" name="username" placeholder="Username" formControlName="username" class="font">
         </div>
-        <div>
-             <!-- <label for="email">Email: </label> -->
-            <input type="text" name="email" placeholder="E-mail" formControlName="email">
+        <div class="line">
+            <label for="email" class="font">Email: </label>
+            <input type="text" name="email" placeholder="E-mail" formControlName="email" class="font">
         </div>
-        <div>
-            <!-- <label for="password">Password: </label> -->
-            <input [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" formControlName="password">
-            <button type="button" (click)="togglePassword()">{{showPassword ? 'Hide' : 'Show'}}</button>
+        <div class="line">
+            <label for="password" class="font">Password: </label>
+            <input class="font" [type]="showPassword ? 'text' : 'password'" name="password" placeholder="Password" formControlName="password">
+            <button type="button" (click)="togglePassword()" class="font">{{showPassword ? 'Hide' : 'Show'}}</button>
         </div>
-        <div>
-             <!-- <label for="passwordc"> Confirm your password: </label> -->
-            <input type="password" name="passwordc" placeholder="Confirm your password" formControlName="confirm">
+        <div class="line">
+             <label for="passwordc" class="font"> Confirm your password: </label>
+            <input type="password" name="passwordc" placeholder="Confirm your password" formControlName="confirm" class="font">
         </div>
-        <div>
-            <label for="accept"> Aceptar terminos y condiciones </label>
-            <input type="checkbox" name="accept" formControlName="acceptTerms"> 
+        <div class="line">
+            <label for="accept" class="font"> Aceptar terminos y condiciones </label>
+            <input type="checkbox" name="accept" formControlName="acceptTerms" class="font"> 
         </div>
-        <div>
-            <button type="submit" [disabled]="!form.valid">Sign Up</button>
+        <div class="line">
+            <button type="submit" [disabled]="!form.valid" class="font">Sign Up</button>
         </div>
-        <span *ngIf="form.errors && form.errors['passwordMismatch']">Passwords dont match</span>
-        <span [hidden]="!created">Correo ya en uso</span>
-        <div>
-            already have a account ? <a routerLink="/login">Log in here!</a>
+        <span *ngIf="form.errors && form.errors['passwordMismatch']" class="error">Passwords dont match</span>
+        <span [hidden]="!created" class="error">Correo ya en uso</span>
+        <div class="line">
+            <p class="font">already have a account? <a routerLink="/login" class="font">Log in here!</a></p> 
         </div>
     </form>    
 </div>
